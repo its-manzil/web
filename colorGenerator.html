@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Generator</title>
+    <style>
+      #color-box {
+        width: 144px;
+        height: 144px;
+        border: 2px solid black;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" placeholder="Enter color code" id="color-input" />
+      <button onclick="changeColor()">Generate Color</button>
+      <div id="color-box"></div>
+    </div>
+
+    <script>
+      function changeColor() {
+        var colorInput = document.getElementById("color-input").value;
+        var colorBox = document.getElementById("color-box");
+
+        if (/^#[0-9A-F]{6}$/i.test(colorInput)) {
+          colorBox.style.backgroundColor = colorInput;
+        } else {
+          alert("Please Enter a valid color in the format #RRGGBB");
+        }
+      }
+    </script>
+  </body>
+</html>
